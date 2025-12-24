@@ -1,0 +1,118 @@
+@font-face {
+  font-family: 'Aldyn';
+  src: url('../fonts/Aldyn Heart Italic.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background: #b30000;
+  font-family: 'Aldyn', cursive;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* BLACKOUT */
+#blackout {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* TEXTOS */
+#te-amo {
+  font-size: 90px;
+  animation: pulseText 2.5s infinite;
+}
+
+#navidad {
+  font-size: 95px;
+  display: none;
+  margin-top: 20px;
+  animation: pulseText 2.5s infinite;
+}
+
+/* CORAZÓN */
+#heart {
+  width: 340px;
+  display: none;
+  animation: pulseSlow 2.8s infinite;
+}
+
+/* OSITO */
+#osito {
+  width: 260px;
+  margin-top: 20px;
+  display: none;
+  animation: pulseSlow 3s infinite;
+}
+
+/* BOTÓN */
+#replay {
+  display: none;
+  margin-top: 25px;
+  padding: 10px 25px;
+  font-size: 20px;
+  border-radius: 25px;
+  border: none;
+  background: pink;
+  cursor: pointer;
+}
+
+/* ANIMACIONES */
+@keyframes pulseSlow {
+  0%,100% { transform: scale(1); filter: drop-shadow(0 0 0 pink); }
+  50% { transform: scale(1.15); filter: drop-shadow(0 0 25px pink); }
+}
+
+@keyframes pulseText {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* CORAZONES */
+.heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 24px;
+  animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+/* NIEVE */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  font-size: 16px;
+  animation: snowFall 6s linear forwards;
+}
+
+@keyframes snowFall {
+  to {
+    transform: translateY(110vh);
+  }
+}
